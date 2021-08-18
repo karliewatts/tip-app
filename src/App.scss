@@ -1,0 +1,179 @@
+@import "./Base.scss";
+
+/*--------------- btns --------------*/
+@mixin btn {
+  position: relative;
+  width: 100%;
+  padding: .5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: .35rem;
+  box-sizing: content-box;
+}
+.btn {
+  @include btn;
+  color: $white;
+  background-color: $cyan-dark;
+
+  &:focus {
+    color: $cyan-dark;
+    background-color: $cyan;
+  }
+}
+
+.custom-amt {
+  @include btn;
+  background-color: $cyan-grey-xlight;
+  border-radius: .5rem;
+
+  &::placeholder {
+    color: $cyan-dark-grey;
+    text-align: center;
+  }
+}
+
+.reset-btn {
+  @include btn;
+  background: $cyan;
+  opacity: 15%;
+  color: $cyan-dark;
+  text-transform: uppercase;
+}
+
+/*--------------- container --------------*/
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__logo {
+    margin: 0 auto;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+}
+
+/*--------------- calculator --------------*/
+.calculator {
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  @media (min-width: $mq-med) {
+    display: flex;
+    max-width: 70%;
+    }
+  
+  * {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+/*--------------- form section --------------*/
+.form {
+  @media (min-width: $mq-med) {
+    width: 50%;
+    padding: 1rem 3rem 1rem 1rem;
+  }
+
+  &__label {
+    display: block;
+    padding-bottom: 2rem;
+    color: $cyan-dark-grey;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  input[type=text] {
+    width: 100%;
+    color: $cyan-dark;
+    font-size: 1.25rem;
+    text-align: right;
+    border: 2px solid $cyan-grey-xlight;
+    background: $cyan-grey-xlight;
+
+    &::placeholder {
+      color: $cyan-grey;
+    }
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+    input {
+      outline: $cyan-grey;
+    }
+}
+
+  &__input {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: .5rem;
+      padding: .5rem;
+      text-align: right;
+      border: none;
+      border-radius: .5rem;
+      background: $cyan-grey-xlight;
+      box-sizing: border-box;
+    }
+
+    &__btns {
+      display: grid;
+      margin-top: .5rem;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+      grid-template-rows: auto;
+
+      @media (min-width: $mq-med) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+}
+
+/*--------------- results --------------*/
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  background: $cyan-dark;
+  border-radius: 1rem;
+
+   @media (min-width: $mq-med) {
+    width: 50%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    color: $cyan-grey-xlight;
+    font-weight: 400;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: .8rem;
+    color: $cyan-grey;
+  }
+
+  &__amount {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $cyan;
+
+    @media (min-width: $mq-med) {
+      font-size: 3rem;
+    }
+  }
+}

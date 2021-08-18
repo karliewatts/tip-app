@@ -1,0 +1,26 @@
+/*--------------- media queries --------------*/
+// Smallest phone
+$mq-xs: 22em;
+// Phone
+$mq-sm: 32em;
+// Tablet
+$mq-med: 54em;
+// Laptop
+$mq-lg: 72em;
+// Past laptop
+$mq-xl: 91em;
+// Mid-size monitor
+$mq-xl2: 115em;
+// Thunderbold goes to 157em
+$mq-xl3: 130em;
+
+/*--------------- colors --------------*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+$cyan: hsl(172, 67%, 45%);
+$cyan-dark:  hsl(183, 100%, 15%);
+$cyan-dark-grey: hsl(186, 14%, 43%);
+$cyan-grey: hsl(184, 14%, 56%);
+$cyan-grey-light: hsl(185, 41%, 84%);
+$cyan-grey-xlight: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%)
