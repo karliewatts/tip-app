@@ -1,5 +1,5 @@
 import React from "react";
-import NumberProvider from "./components/NumberProvider";
+import NumberProvider from "./components/Handles";
 import Calculator from "./components/Calculator";
 
 import './App.scss';

@@ -35,10 +35,14 @@
 
 .reset-btn {
   @include btn;
-  background: $cyan;
+  background: $cyan-grey-light;
   opacity: 15%;
   color: $cyan-dark;
   text-transform: uppercase;
+
+  &.is-ready {
+    opacity: 100%;
+  }
 }
 
 /*--------------- container --------------*/
@@ -60,7 +64,7 @@
   border-radius: 1rem;
   @media (min-width: $mq-med) {
     display: flex;
-    max-width: 70%;
+    max-width: 80%;
     }
   
   * {

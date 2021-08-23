@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NumberContext } from './NumberProvider';
+import { NumberContext } from './Handles';
 import {ReactComponent as Person} from '../images/icon-person.svg';
 
 const NumberOfPeople = () => {
@@ -8,6 +8,7 @@ const NumberOfPeople = () => {
   return (
     <label className="form__label">
       Number of People
+      <p>Can't be zero</p>
       <div className="form__input">
           <Person />
           <input type="text" placeholder="0" maxLength="3" value={ppl} onChange={handleSetPpl} />

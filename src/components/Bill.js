@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NumberContext } from './NumberProvider';
+import { NumberContext } from './Handles';
 import {ReactComponent as Dollar} from '../images/icon-dollar.svg';
 
 const Bill = () => {

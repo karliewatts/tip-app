@@ -1,15 +1,22 @@
 import React, {useContext} from 'react';
-import { NumberContext } from './NumberProvider';
+import { NumberContext } from './Handles';
 
 const TipPerPerson = () => {
-    const { number, storedNumber} = useContext(NumberContext);
+    const { bill, tip, customTip, ppl } = useContext(NumberContext);
+    let tipFinal = '';
+    if (tip === '') {
+      tipFinal = customTip / 100;
+    } else {
+      tipFinal = tip;
+    }
+    
   return (
     <div className="results__item">
       <div className="results__item-label">
         <h2 className="results__title">Tip Amount</h2>
         <p className="results__subtitle">/ person</p>
       </div>
-      <p className="results__amount">{!number.length && !storedNumber ? '$0.00' : number || storedNumber}</p>
+      <p className="results__amount">${bill && (tip || customTip) && ppl ? (((bill * tipFinal) / ppl).toFixed(2)) : "0.00"}</p>
     </div>
   )};
 

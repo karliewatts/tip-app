@@ -1,10 +1,15 @@
 import React, { useContext } from 'react';
-import { NumberContext } from './NumberProvider';
+import { NumberContext } from './Handles';
 
 const ResetButton = () => {
-  const { handleClearValue } = useContext(NumberContext);
+  const { bill, tip, ppl, handleClearValue } = useContext(NumberContext);
+  let resetReady = '';
+  if (bill || tip || ppl) {
+    resetReady = 'is-ready';
+  }
+  
   return (
-    <button type="button" className="reset-btn" onClick={() => handleClearValue()}>
+    <button type="button" className={`reset-btn ${resetReady}`} onClick={() => handleClearValue()}>
       reset
     </button>
   );

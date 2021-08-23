@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { NumberContext } from './NumberProvider';
+import { NumberContext } from './Handles';
 
-const TipButton = ({ buttonValue, buttonValueName }) => {
-  const { handleSetTip } = useContext(NumberContext);
+const TipButton = ({ buttonValue, buttonValueName, i }) => {
+  const { activity, handleSetTip } = useContext(NumberContext);
   return (
-    <button type="button" className="btn" value={buttonValue} onChange={() => handleSetTip(buttonValue)}>
+    <button type="button" className={`btn ${activity}`} value={buttonValue} onClick={handleSetTip}>
       {buttonValueName}
     </button>
   );
