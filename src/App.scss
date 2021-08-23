@@ -3,33 +3,39 @@
 /*--------------- btns --------------*/
 @mixin btn {
   position: relative;
-  width: 100%;
   padding: .5rem 0;
   font-size: 1.25rem;
   font-weight: 700;
-  border: none;
-  border-radius: .35rem;
-  box-sizing: content-box;
+  border-radius: .5rem;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 .btn {
   @include btn;
   color: $white;
   background-color: $cyan-dark;
+  transition: all .1s ease;
 
   &:focus {
     color: $cyan-dark;
     background-color: $cyan;
+    transition: all .1s ease;
   }
 }
 
 .custom-amt {
   @include btn;
   background-color: $cyan-grey-xlight;
-  border-radius: .5rem;
+  border: 2px solid $cyan-grey-xlight !important;
 
   &::placeholder {
     color: $cyan-dark-grey;
     text-align: center;
+  }
+
+  &:focus {
+    border: 2px solid $cyan !important;
   }
 }
 
@@ -39,9 +45,14 @@
   opacity: 15%;
   color: $cyan-dark;
   text-transform: uppercase;
+  border: none;
+  cursor: default;
+  transition: opacity .1s ease;
 
   &.is-ready {
     opacity: 100%;
+    cursor: pointer;
+    transition: opacity .1s ease;
   }
 }
 
@@ -85,26 +96,29 @@
     color: $cyan-dark-grey;
     font-size: 1rem;
     font-weight: 700;
-  }
+  
+     & input[type=text] {
+      width: 100%;
+      color: $cyan-dark;
+      font-size: 1.25rem;
+      text-align: right;
+      border: 2px solid $cyan-grey-xlight;
+      background: $cyan-grey-xlight;
+      border: none;
+      cursor: pointer;
 
-  input[type=text] {
-    width: 100%;
-    color: $cyan-dark;
-    font-size: 1.25rem;
-    text-align: right;
-    border: 2px solid $cyan-grey-xlight;
-    background: $cyan-grey-xlight;
+      &::placeholder {
+        color: $cyan-grey;
+      }
+    }
 
-    &::placeholder {
-      color: $cyan-grey;
+    & .is-warn {
+      border: 2px solid $warn;
     }
   }
 
-  textarea:focus, input:focus{
+  textarea:focus, input:focus {
     outline: none;
-    input {
-      outline: $cyan-grey;
-    }
 }
 
   &__input {
@@ -115,10 +129,14 @@
       margin-top: .5rem;
       padding: .5rem;
       text-align: right;
-      border: none;
       border-radius: .5rem;
       background: $cyan-grey-xlight;
+      border: 2px solid $cyan-grey-xlight;
       box-sizing: border-box;
+
+      &:focus-within{
+        border: 2px solid $cyan;
+      }
     }
 
     &__btns {
@@ -130,6 +148,25 @@
 
       @media (min-width: $mq-med) {
         grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    &__ppl-labels {
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &__ppl-warn {
+      display: none;
+      color: $warn;
+
+      &.is-warn {
+        display: block;
+        border: 0;
       }
     }
 }
